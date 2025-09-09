@@ -1,0 +1,47 @@
+AWS EC2, EBS e RDS - Diagrama de Fluxo
+
+Descrição
+
+Este projeto representa o fluxo de dados dentro da AWS, utilizando instâncias EC2, volumes EBS e RDS. 
+O objetivo é demonstrar como arquivos enviados por usuários podem ser processados e armazenados na nuvem, além de mostrar a interação entre diferentes serviços da AWS.
+O diagrama foi criado no Draw.io e ilustra de forma clara a relação entre usuário, armazenamento e banco de dados gerenciado.
+
+Componentes do Diagrama
+1. Usuário
+Representa a pessoa que envia arquivos para a AWS.
+Atua como ponto de entrada dos dados no sistema.
+
+
+2. Volume EBS de Origem (D-EBS)
+Elastic Block Store (EBS) conectado à instância EC2.
+Armazena os arquivos enviados pelo usuário inicialmente.
+Pode ser considerado um volume de entrada para processamento.
+
+
+3. Instância EC2
+Responsável por processar os dados entre volumes EBS.
+Recebe dados do D-EBS e envia para o E-EBS de destino.
+Pode interagir com o RDS para manipulação de dados estruturados.
+
+
+4. Volume EBS de Destino (E-EBS)
+Segundo volume de armazenamento em bloco.
+Serve para backup, replicação ou armazenamento final dos dados processados.
+
+
+5. RDS (Relational Database Service)
+Banco de dados gerenciado.
+Permite que a EC2 grave ou consulte informações adicionais dos arquivos.
+Demonstra persistência de dados sem gerenciamento de infraestrutura.
+
+
+°Fluxo de Dados
+Usuário envia arquivo para o D-EBS.
+EC2 processa o arquivo, lendo do D-EBS e escrevendo no E-EBS.
+EC2 interage com RDS para gravação ou consulta de dados estruturados.
+
+
+°Objetivo
+Demonstrar a interação entre EC2 e EBS.
+Mostrar como snapshots, backup ou replicação de dados podem ser realizados.
+Incluir RDS para exemplificar persistência em banco gerenciado.
